@@ -1,11 +1,11 @@
 {
-  "extends": "@tsconfig/node20/tsconfig.json",
+  "extends": "@tsconfig/node20/tsconfig.json",  // Extend the official Node 20 TypeScript preset
   "compilerOptions": {
-    "outDir": "./build",
-    "rootDir": "./src",
-    "sourceMap": true,
-    "noEmit": false
+    "outDir": "./build", // // Output folder for compiled JavaScript files
+    "rootDir": "./src", // Root folder for TypeScript source files
+    "sourceMap": true, // Generate source maps for debugging (maps JS back to TS)
+    "noEmit": false // Ensure that the compiler emits output (JS files)
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "build"]
+  "include": ["src/**/*"], // Files/folders to include in compilation
+  "exclude": ["node_modules", "build"] // Files/folders to exclude from compilation
 }
