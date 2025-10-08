@@ -5,11 +5,11 @@ This is a simple API for tracking daily habits, built with a Model-View-Controll
 
 I developed this API using TypeScript to demonstrate advanced features of the language. This included:
 
-    * Using interfaces to define clear and robust data structures for habits and errors.
-    * Implementing a custom ApiError class to ensure consistent, centralized error handling.
-    * Leveraging async/await to manage reading and writing files for better performance.
+* Using interfaces to define clear and robust data structures for habits and errors.
+* Implementing a custom ApiError class to ensure consistent, centralized error handling.
+* Leveraging async/await to manage reading and writing files for better performance.
 
-[Building a CRUD API in TypeScript](http://youtube.link.goes.here)
+[Building a CRUD API in TypeScript](https://youtu.be/VHEUDZCKXdM)
 
 # Development Environment
 

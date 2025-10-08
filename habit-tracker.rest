@@ -1,7 +1,7 @@
 // habit.rest
 
 // Define a variable for the base URL
-@baseURL = http://localhost:5000
+@baseURL = http://localhost:3000
 
 ###
 // Test 1: Get all habits (should return an empty array initially)

@@ -14,7 +14,6 @@ export class ApiError extends Error {
 }
 
 // A utility function to wrap async route handlers and catch errors.
-// This prevents the need for repetitive try-catch blocks in every async controller function.
 export const asyncHandler = (fn: any) => (req: Request, res: Response, next: NextFunction) => {
   Promise.resolve(fn(req, res, next)).catch(next);
 };
