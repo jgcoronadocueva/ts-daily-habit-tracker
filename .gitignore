@@ -1,11 +1,10 @@
 # Dependency folders
-node_modules/
+node_modules
 
 # Compiled TypeScript files
-build/
+build
 
 # pnpm-specific files
-.pnpm-store/
 pnpm-lock.yaml
 
 # Environment variables
@@ -13,5 +12,5 @@ pnpm-lock.yaml
 
 # OS and editor files
 .DS_Store
-.vscode/
+.vscode
 
