@@ -1,0 +1,17 @@
+# Dependency folders
+node_modules/
+
+# Compiled TypeScript files
+build/
+
+# pnpm-specific files
+.pnpm-store/
+pnpm-lock.yaml
+
+# Environment variables
+.env*
+
+# OS and editor files
+.DS_Store
+.vscode/
+

@@ -1,0 +1,26 @@
+{
+  "name": "ts-daily-habit-tracker",
+  "version": "1.0.0",
+  "description": "A Daily Habit Tracker built with TypeScript and Express",
+  "main": "build/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon --watch 'src/**/*.ts' --require dotenv/config --exec tsx src/server.ts",
+    "build": "rimraf build && tsc",
+    "start": "pnpm run build && node build/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.6",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.7.0",
+    "nodemon": "^3.1.10",
+    "tsx": "^4.16.2",
+    "typescript": "^5.9.3",
+    "dotenv": "^17.2.3"
+  }
+}

@@ -1,0 +1,92 @@
+// habit.rest
+
+// Define a variable for the base URL
+@baseURL = http://localhost:5000
+
+###
+// Test 1: Get all habits (should return an empty array initially)
+GET {{baseURL}}/habits
+
+###
+// Test 2: Create a new habit successfully
+# @name createHabitRequest
+POST {{baseURL}}/habits
+Content-Type: application/json
+
+{
+  "title": "Go for a morning walk",
+  "description": "Walk around the park for 30 minutes.",
+  "parentId": null
+}
+
+###
+
+// Define variable from the response of the named request
+@createdHabitId = {{createHabitRequest.response.body.id}}
+
+###
+
+// Test 3: Get the habit created in the previous step
+GET {{baseURL}}/habits/{{createdHabitId}}
+
+###
+// Test 4: Create a new habit (should return 404 - missing 'description' field)
+POST {{baseURL}}/habits
+Content-Type: application/json
+
+{
+  "title": "Read a book"
+}
+
+###
+// Test 5: Update the habit created in Test 2
+PUT {{baseURL}}/habits/{{createdHabitId}}
+Content-Type: application/json
+
+{
+  "title": "Go for an evening walk",
+  "completed": true,
+  "streak": 1
+}
+
+###
+// Test 6: Delete the habit created in Test 2
+DELETE {{baseURL}}/habits/{{createdHabitId}}
+
+###
+// Test 7: Attempt to get the deleted habit (should return 404)
+GET {{baseURL}}/habits/{{createdHabitId}}
+
+
+
+// SUB-HABIT TESTS
+
+###
+// Test 8: Create a main habit to nest the sub-habit
+# @name createMainHabitRequest
+POST {{baseURL}}/habits
+Content-Type: application/json
+
+{
+  "title": "Evening Routine",
+  "description": "Complete before bed.",
+  "parentId": null
+}
+
+###
+@MainHabitId = {{createMainHabitRequest.response.body.id}}
+
+###
+// Test 9: Create a sub-habit under the parent
+POST {{baseURL}}/habits
+Content-Type: application/json
+
+{
+  "title": "Brush teeth",
+  "description": "Don't forget to floss!",
+  "parentId": {{MainHabitId}}
+}
+
+###
+// Test 10: Get the parent habit to see the sub-habit
+GET {{baseURL}}/habits/{{MainHabitId}}
